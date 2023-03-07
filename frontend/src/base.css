@@ -1,0 +1,94 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
+
+:root {
+  --background-color: aliceblue;
+  --white: #fff;
+  --textColor: #333;
+  --green: rgb(10, 143, 10);
+  --darkGreen: rgb(3, 92, 3);
+  --red: rgb(192, 3, 3);
+}
+
+.app-container.darkMode {
+  --background-color: rgb(2, 23, 41);
+  --white: #010a18;
+  --textColor: #ecedf5;
+  --green: rgb(10, 143, 10);
+  --darkGreen: rgb(3, 92, 3);
+  --red: rgb(192, 3, 3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--textColor);
+}
+
+a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+ul, 
+li {
+  list-style: none;
+}
+
+button,
+input,
+textarea {
+  appearance: none;
+  border: none;
+  background: transparent;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+textarea {
+  resize: none;
+}
+
+::placeholder {
+  padding-top: 5px;
+  font-size: 14px;
+  opacity: .6;
+}
+
+section {
+  padding-block: 2rem 1rem;
+  /* border-bottom: 1px solid var(--textColor); */
+}
+
+.container {
+  width: min(100%, 1400px);
+  margin: 0 auto;
+  padding: 20px 10px;
+}
+
+.btn {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--textColor);
+  transition: .5s;
+}
+
+.error {
+  color: var(--red);
+  font-size: 16px;
+}
