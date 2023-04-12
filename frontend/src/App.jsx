@@ -8,25 +8,24 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import PostPage from './pages/PostPage'
 import Signup from './pages/Signup'
-import RandomPosts from './pages/RandomPosts'
+import Login from './pages/Login'
+// import RandomPosts from './pages/RandomPosts'
 
 const App = () => {
   const [ darkMode, setDarkMode ] = useState(false)
   const appDiv = useRef()
   const { user } = useAuthContext()
 
-  const onHandleToggle = () => {
-    setDarkMode(() => !darkMode)
-    
-    darkMode
-      ? appDiv.current.classList.add('darkMode')
-      : appDiv.current.classList.remove('darkMode')
+  const handleToggle = () => {
+    // localStorage.setItem('darkMode', !darkMode)
+    setDarkMode(!darkMode)
   }
 
+
   return(
-    <div className="app-container" ref={ appDiv }>
+    <div className={darkMode ? 'app-container darkMode' : 'app-container'} ref={ appDiv }>
       <BrowserRouter>
-        <NavigationBar onHandleToggle={ onHandleToggle } />
+        <NavigationBar handleToggle={ handleToggle } />
         <div className="pages">
           <Routes>
             <Route 
@@ -41,22 +40,27 @@ const App = () => {
 
             <Route 
               path='/contact-us'
-              element={ user ? <Contact /> : <Navigate to='/signup' /> }
+              element={ !user ? <Login /> : <Navigate to='/contact-us' /> }
             />
 
             <Route 
               path='/posts/:id'
-              element={ <PostPage /> }
+              element={ !user ? <Login /> : <PostPage /> }
             />
 
             <Route 
               path='/posts'
-              element={ user ? <RandomPosts /> : <Navigate to='/signup' />}
+              element={ !user ? <Login /> : <Navigate to='/posts' />}
             />
 
             <Route 
               path='/signup'
               element={ <Signup /> }
+            />
+
+            <Route 
+              path='/login'
+              element={ <Login /> }
             />
           </Routes>
         </div>

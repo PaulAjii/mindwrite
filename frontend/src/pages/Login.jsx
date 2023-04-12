@@ -1,27 +1,27 @@
 import { useState } from 'react'
-import { useSignup } from '../hooks/useSignup'
+import { useLogin } from '../hooks/useLogin'
 import { Link } from 'react-router-dom'
 
-const Signup = () => {
+const Login = () => {
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
-  const { signup, isLoading, error } = useSignup()
+  const { login, isLoading, error } = useLogin()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     console.log(email)
     console.log(password)
 
-    await signup(email, password)
+    await login(email, password)
   }
 
   return (
-    <section className="signup">
+    <section className="login">
       <div className="container">
-        <h3 className='title'>Join our community of writers</h3>
+        <h3 className='title'>Continue from where you stopped</h3>
 
-        <form className="signup-form" onSubmit={ handleSubmit }>
-          <h4 className='title signup-title'>Sign Up</h4>
+        <form className="login-form" onSubmit={ handleSubmit }>
+          <h4 className='title login-title'>Sign In</h4>
           <div className="form-fields__container">
             <div className="form-control">
               <label>
@@ -48,22 +48,23 @@ const Signup = () => {
             </div>
             <button
               disabled={ isLoading }
-              className='btn signup-btn'
+              className='btn login-btn'
               type='submit'
             >
-              Sign Up
+              Login
             </button>
             { error && <div className='error'>{ error }</div>}
             <p className="form-text">
-              Already have an account?
-              <Link to='/login' style={{ textDecoration: 'underline' }}> Sign in </Link>
+              Don't have an account? 
+              <Link to='/signup' style={{ textDecoration: 'underline' }}> Sign up </Link>
               here.
             </p>
           </div>
+
         </form>
       </div>
     </section>
   )
 }
 
-export default Signup
+export default Login

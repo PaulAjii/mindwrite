@@ -1,21 +1,23 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap'); */
 
 :root {
-  --background-color: aliceblue;
-  --white: #fff;
+  --background-color: rgb(230, 238, 247);
+  --neutral: #ffffff;
   --textColor: #333;
   --green: rgb(10, 143, 10);
   --darkGreen: rgb(3, 92, 3);
   --red: rgb(192, 3, 3);
+  --white: #eee;
 }
 
 .app-container.darkMode {
   --background-color: rgb(2, 23, 41);
-  --white: #010a18;
+  --neutral: #010a18;
   --textColor: #ecedf5;
   --green: rgb(10, 143, 10);
   --darkGreen: rgb(3, 92, 3);
   --red: rgb(192, 3, 3);
+  --white: #eee;
 }
 
 * {

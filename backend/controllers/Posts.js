@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { findOneAndUpdate } = require('../model/Posts')
+// const { findOneAndUpdate } = require('../model/Posts')
 const Posts = require('../model/Posts')
 
 const getPosts = async (req, res) => {
@@ -50,7 +50,8 @@ const createPost = async(req, res) => {
   }
 
   try {
-    const post = await Posts.create({ title, body })
+    const user_id = req.user[0]._id
+    const post = await Posts.create({ title, body, user_id })
     res.status(201).json(post)
   } catch (error) {
     res.status(400).json({

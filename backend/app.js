@@ -3,11 +3,13 @@ const express = require('express')
 const cors = require('cors')
 
 const connectDB = require('./db/connectDB')
+const { dashboard } = require('./controllers/Users')
 const postRoute = require('./routes/Posts')
 const userRoute = require('./routes/Users')
 
 // Middlewares
 const logger = require('./middlewares/logger')
+const requireAuth = require('./middlewares/requireAuth')
 
 const app = express()
 
@@ -17,6 +19,7 @@ app.use(logger)
 
 app.use('/api/v1/posts', postRoute)
 app.use('/api/v1/users', userRoute)
+app.use('/api/v1/dashboard', requireAuth, dashboard)
 
 const start = async () => {
   try {

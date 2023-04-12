@@ -16,6 +16,7 @@ const Home = () => {
       const response = await fetch('http://localhost:5000/api/v1/posts')
 
       const jsonData = await response.json()
+      console.log(jsonData)
 
       if(response.ok) {
         dispatch({ type: 'GET_POSTS', payload: jsonData})

@@ -14,6 +14,11 @@ export const authReducer = (state, action) => {
         user: null
       }
     
+    // case 'GET_USER':
+    //   return {
+    //     user: state.user.filter(post => post._id === action.payload._id)
+    //   }
+    
     default:
       return state
   }

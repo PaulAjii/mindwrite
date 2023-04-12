@@ -41,7 +41,24 @@ const loginUser = async (req, res) => {
   } 
 }
 
+const dashboard = async (req, res) => {
+  try {
+    const user_id = req.user[0]._id
+
+    const user = await User.findById(user_id)
+
+    res.status(200).json({
+      user
+    })
+  } catch (error) {
+    res.status(400).json({
+      error: error.message
+    })
+  }
+}
+
 module.exports = {
   registerUser,
-  loginUser
+  loginUser,
+  dashboard
 }
