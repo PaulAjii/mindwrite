@@ -11,7 +11,7 @@ const {
 
 router.route('/').get(getPosts)
 router.use(requireAuth)
-router.post(createPost)
+router.route('/').post(createPost)
 router.route('/:id').get(getOnePost).delete(deletePost).patch(updatePost)
 
 module.exports = router
