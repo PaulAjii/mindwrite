@@ -45,6 +45,7 @@ header .logo:hover span {
   gap: 10px;
 }
 
+.sign-out,
 .nav-link {
   padding: 5px;
   text-transform: capitalize;
@@ -56,15 +57,30 @@ header .logo:hover span {
   color: var(--green);
 }
 
+.sign-out,
 .nav-link:last-child {
-  background-color: var(--green);
   color: var(--white);
   border-radius: 20px;
   padding-inline: 10px;
 }
 
+.nav-link:last-child {
+  background-color: var(--green);
+}
+
+.sign-out {
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
 .nav-link:last-child:hover {
   background-color: var(--darkGreen);
+}
+
+.sign-out:hover {
+  background-color: var(--red);
+  color: var(--white);
+  border: none;
 }
 
 .banner {
