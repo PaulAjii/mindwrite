@@ -6,4 +6,5 @@
   "routes": [
     "src": "/(.*)",
     "dest": "/api/v1/posts"
+  ]
 }
