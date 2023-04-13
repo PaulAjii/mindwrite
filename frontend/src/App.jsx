@@ -55,12 +55,12 @@ const App = () => {
 
             <Route 
               path='/signup'
-              element={ <Signup /> }
+              element={ !user ? <Signup /> : <Navigate to="/" />  }
             />
 
             <Route 
               path='/login'
-              element={ <Login /> }
+              element={ !user ? <Login /> : <Navigate to="/" /> }
             />
           </Routes>
         </div>
