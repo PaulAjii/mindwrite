@@ -16,7 +16,7 @@ const Home = () => {
       const response = await fetch('https://api-mindwrite.onrender.com/api/v1/posts')
 
       const jsonData = await response.json()
-      console.log(jsonData)
+      // console.log(jsonData)
 
       if(response.ok) {
         dispatch({ type: 'GET_POSTS', payload: jsonData})

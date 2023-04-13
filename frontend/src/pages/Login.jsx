@@ -11,6 +11,8 @@ const Login = () => {
     e.preventDefault()
     console.log(email)
     console.log(password)
+    setEmail("")
+    setPassword("")
 
     await login(email, password)
   }
