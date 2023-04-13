@@ -13,7 +13,7 @@ const Home = () => {
 
   useEffect(() => {
       const fetchData = async () => {
-      const response = await fetch('http://localhost:5000/api/v1/posts')
+      const response = await fetch('https://api-mindwrite.onrender.com/api/v1/posts')
 
       const jsonData = await response.json()
       console.log(jsonData)
