@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { useAuthContext } from './hooks/useAuthContext'
+import { useAuthContext } from '../hooks/useAuthContext'
 
 const NavigationBar = ({ handleToggle }) => {
   const { user } = useAuthContext()
