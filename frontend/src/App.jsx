@@ -9,7 +9,7 @@ import Contact from './pages/Contact'
 import PostPage from './pages/PostPage'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-// import RandomPosts from './pages/RandomPosts'
+import RandomPosts from './pages/RandomPosts'
 
 const App = () => {
   const [ darkMode, setDarkMode ] = useState(false)
@@ -40,17 +40,17 @@ const App = () => {
 
             <Route 
               path='/contact-us'
-              element={ !user ? <Login /> : <Navigate to='/contact-us' /> }
+              element={ user ? <Contact /> : <Navigate to='/login' /> }
             />
 
             <Route 
               path='/posts/:id'
-              element={ !user ? <Login /> : <PostPage /> }
+              element={ user ? <PostPage /> : <Navigate to='/login' /> }
             />
 
             <Route 
               path='/posts'
-              element={ !user ? <Login /> : <Navigate to='/posts' />}
+              element={ user ? <RandomPosts /> : <Navigate to='/login' />}
             />
 
             <Route 
