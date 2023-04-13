@@ -13,22 +13,22 @@ const NavigationBar = ({ handleToggle }) => {
 
         <nav className="nav">
           {
-            !user 
+            user 
               ?
               <div className="nav-links">
               <Link to="/about-us" className="nav-link">know us</Link>
               <Link to="/posts" className="nav-link">read stories</Link>
               <Link to="/login" className="nav-link">sign in</Link>
-              <Link to="/contact-us" className="nav-link">reach us</Link>
-              <Link to="/signup" className="nav-link">get started</Link>
+              <Link to="/contact-us" className="nav-link">sign out</Link>
+              <Link to="/signup" className="nav-link">dashboard</Link>
             </div>
               :
-              <div className="nav-links">
+            <div className="nav-links">
               <Link to="/about-us" className="nav-link">know us</Link>
               <Link to="/posts" className="nav-link">read stories</Link>
               <Link to="/contact-us" className="nav-link">reach us</Link>
-              <Link to="/login" className="nav-link">sign out</Link>
-              <Link to="/signup" className="nav-link">dashboard</Link>
+              <Link to="/login" className="nav-link">sign in</Link>
+              <Link to="/signup" className="nav-link">get started</Link>
             </div>
           }
           
