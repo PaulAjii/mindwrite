@@ -26,7 +26,7 @@ const Home = () => {
     fetchData()
   }, [dispatch])
 
-  return (
+  return (posts &&
     <>
       <Banner />
       <section>
