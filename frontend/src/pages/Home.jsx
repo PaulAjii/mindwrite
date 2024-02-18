@@ -63,7 +63,7 @@ const Home = () => {
       </section>
     </>
 : 
-<div className="loading-overlay"/>
+<div className="loading-overlay">
     <p>Loading</p>
     <p>Sorry, the server is taking too long to load.</p>
 </div>
