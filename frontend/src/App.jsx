@@ -40,17 +40,17 @@ const App = () => {
 
             <Route 
               path='/contact-us'
-              element={ user ? <Contact /> : <Navigate to='/login' /> }
+              element={ <Contact />}
             />
 
             <Route 
               path='/posts/:id'
-              element={ user ? <PostPage /> : <Navigate to='/login' /> }
+              element={ <PostPage /> }
             />
 
             <Route 
               path='/posts'
-              element={ user ? <RandomPosts /> : <Navigate to='/login' />}
+              element={ <RandomPosts />}
             />
 
             <Route 
