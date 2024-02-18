@@ -26,7 +26,7 @@ const Home = () => {
     fetchData()
   }, [dispatch])
 
-  return (posts &&
+  return (posts ?
     <>
       <Banner />
       <section>
@@ -62,6 +62,11 @@ const Home = () => {
         </div>
       </section>
     </>
+: 
+<div className="loading-overlay"/>
+    <p>Loading</p>
+    <p>Sorry, the server is taking too long to load.</p>
+</div>
   )
 }
 
